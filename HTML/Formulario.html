@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -34,14 +34,16 @@
           <label for="nombre" class="form-label">Nombre completo</label>
           <input type="text" class="form-control validate[required]" id="nombre" name="nombre"
             data-errormessage-value-missing="Nombre completo es obligatorio" value=""
-            data-errormessage-custom-error="Ejemplo: hola123@gmail.cl" />
+            data-errormessage-custom-error="Formato: Caaa Aaaa Paaa Caaa" />
 
-          <div id="emailHelp" class="form-text">Tus datos nunca serán compartidos a nadie.</div>
+          <div id="emailHelp" class="form-text">Tus datos nunca serán compartidos con nadie.</div>
         </div>
         <!--CORREO-->
         <div class="form-group">
           <label for="email" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" id="email" name="email">
+          <input type="email" class="form-control" id="email" name="email"
+          data-errormessage-value-missing="Su correo es obligatorio" value=""
+          data-errormessage-custom-error="Ejemplo: hola123@gmail.cl" />
         </div>
         <!--IDENTIDAD-->
         <div class="form-group">
@@ -55,17 +57,21 @@
         <!--INGRESO ID-->
         <div class="from-group">
           <label for="rut" class="form-label"> Ingrese RUT o Pasaporte</label>
-          <input type="rut" class="form-control" id="rut" name="rut">
+          <input type="rut" class="form-control" id="rut" name="rut"
+          data-errormessage-value-missing="El rut es obligatorio, sin puntos y CON guíon" value=""
+          data-errormessage-custom-error="Ejemplo: 12345678-9" />
         </div>
         <!--TELEFONO-->
         <div class="form-group">
           <label for="telefono" class="form-label">Número de telefono</label>
-          <input type="telefono" class="form-control" id="telefono" name="telefono">
+          <input type="telefono" class="form-control" id="telefono" name="telefono"
+          data-errormessage-custom-error="Ejemplo: +56912345678" />
         </div>
         <!--CIUDAD-->
         <div class="form-group">
           <label for="ciudad" class="form-label">Ingrese su ciudad de residencia</label>
-          <input type="text" class="form-control" id="ciudad" name="ciudad" value data-modo="">
+          <input type="text" class="form-control" id="ciudad" name="ciudad"
+          data-errormessage-value-missing="Ciudad es un campo obligatorio" value=""/>
         </div>
         <div class="form-group">
           <label class="control-label" for="comentario">¡Déjanos un comentario sobre en que sector te gustaría
@@ -92,6 +98,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
+
+  <script>
+    $(document).ready(() => {
+      $('formulario').validationEngine();
+    });
+  </script>  
 
 </body>
 
